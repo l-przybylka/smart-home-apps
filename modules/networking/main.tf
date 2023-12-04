@@ -51,3 +51,10 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.gw.id
   }
 }
+
+resource "aws_route_table_association" "public" {
+  count = length(var.public_cidr)
+
+  route_table_id = aws_route_table.public.id
+  subnet_id      = var.public_cidr[count.index].id
+}
