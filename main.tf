@@ -8,12 +8,28 @@ module "networking" {
   azs             = var.azs
 }
 
-# Create security groups for your subnets to allow ingress and egress for HTTP and HTTPS request on the correct ports from all external sources.
-
-# Make sure you can also SSH from your IP address!
-
 module "security" {
   source = "./modules/security"
 
   vpc_id = module.networking.vpc_id
 }
+
+module "app-server" {
+  source = "./modules/app-server"
+
+  azs                = var.azs
+  instance_type      = var.instance_type
+  security_group_ids = module.security.security_group_ids
+  public_subnets     = module.networking.public_subnets_ids
+  access_key         = var.access_key
+}
+
+# Get the lighting service hosted and working in your network.
+
+# Lighting service
+
+# The service should be able to be contacted externally and interact with a DynamoDB table in your network.
+
+# To contact DynamoDB you will need to create a user with polices to access DynamoDB. Give this user CLI access and use these credentials to authenticate your services in the env files.
+
+# You will also have to set up a User for this service in IAM with a policy to be able to contact DynamoDB. We recommend creating this in the AWS console rather than creating this information using Terraform so as to not expose these keys in your state file.
