@@ -5,7 +5,7 @@ variable "vpc_name" {
 
 variable "cidr" {
   type        = string
-  description = "CIDR for the VPC"
+  description = "CIDR block for the VPC"
 }
 
 variable "public_subnets" {
