@@ -10,11 +10,10 @@ resource "aws_security_group" "ssh" {
 
 resource "aws_vpc_security_group_ingress_rule" "ssh" {
   security_group_id = aws_security_group.ssh.id
-
-  cidr_ipv4   = "86.24.169.23/32"
-  from_port   = 22
-  ip_protocol = "tcp"
-  to_port     = 22
+  cidr_ipv4         = "86.24.169.23/32"
+  from_port         = 22
+  ip_protocol       = "tcp"
+  to_port           = 22
 }
 
 resource "aws_security_group" "http" {
@@ -27,24 +26,20 @@ resource "aws_security_group" "http" {
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "http" {
+resource "aws_vpc_security_group_ingress_rule" "http80" {
   security_group_id = aws_security_group.http.id
-
-  cidr_ipv4   = "0.0.0.0/0"
-  cidr_ipv6   = "::/0"
-  from_port   = 80
-  ip_protocol = "tcp"
-  to_port     = 80
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 80
+  ip_protocol       = "tcp"
+  to_port           = 80
 }
 
-resource "aws_vpc_security_group_ingress_rule" "http" {
+resource "aws_vpc_security_group_ingress_rule" "http3000" {
   security_group_id = aws_security_group.http.id
-
-  cidr_ipv4   = "0.0.0.0/0"
-  cidr_ipv6   = "::/0"
-  from_port   = 3000
-  ip_protocol = "tcp"
-  to_port     = 3000
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 3000
+  ip_protocol       = "tcp"
+  to_port           = 3000
 }
 
 resource "aws_security_group" "https" {
@@ -57,24 +52,20 @@ resource "aws_security_group" "https" {
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "https" {
+resource "aws_vpc_security_group_ingress_rule" "https80" {
   security_group_id = aws_security_group.https.id
-
-  cidr_ipv4   = "0.0.0.0/0"
-  cidr_ipv6   = "::/0"
-  from_port   = 80
-  ip_protocol = "tcp"
-  to_port     = 80
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 80
+  ip_protocol       = "tcp"
+  to_port           = 80
 }
 
-resource "aws_vpc_security_group_ingress_rule" "https" {
+resource "aws_vpc_security_group_ingress_rule" "https3000" {
   security_group_id = aws_security_group.https.id
-
-  cidr_ipv4   = "0.0.0.0/0"
-  cidr_ipv6   = "::/0"
-  from_port   = 3000
-  ip_protocol = "tcp"
-  to_port     = 3000
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 3000
+  ip_protocol       = "tcp"
+  to_port           = 3000
 }
 
 resource "aws_security_group" "egress" {
@@ -89,8 +80,6 @@ resource "aws_security_group" "egress" {
 
 resource "aws_vpc_security_group_egress_rule" "egress" {
   security_group_id = aws_security_group.egress.id
-
-  cidr_ipv4   = "0.0.0.0/0"
-  cidr_ipv6   = "::/0"
-  ip_protocol = "-1"
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1"
 }
