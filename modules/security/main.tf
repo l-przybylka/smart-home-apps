@@ -76,3 +76,21 @@ resource "aws_vpc_security_group_ingress_rule" "https" {
   ip_protocol = "tcp"
   to_port     = 3000
 }
+
+resource "aws_security_group" "egress" {
+  name        = "allow_egress"
+  description = "Allows Egress connections"
+  vpc_id      = var.vpc_id
+
+  tags = {
+    Name = "sg-egress"
+  }
+}
+
+resource "aws_vpc_security_group_egress_rule" "egress" {
+  security_group_id = aws_security_group.egress.id
+
+  cidr_ipv4   = "0.0.0.0/0"
+  cidr_ipv6   = "::/0"
+  ip_protocol = "-1"
+}
