@@ -1,6 +1,9 @@
-# Be in the correct region
-# Have 3 Availability Zones
-# Have a Public subnet in each AZ
-# Have a Private subnet in each AZ
-# Have an Internet Gateway
-# A route table that can deal with local traffic as well as route to the IGW for any other traffic
+module "networking" {
+  source = "./modules/networking"
+
+  vpc_name        = var.vpc_name
+  cidr            = var.cidr
+  public_subnets  = var.public_subnets
+  private_subnets = var.private_subnets
+  azs             = var.azs
+}
