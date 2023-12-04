@@ -24,9 +24,10 @@ module "app-server" {
   access_key         = var.access_key
 }
 
-# Get the lighting service hosted and working in your network.
+module "database" {
+  source = "./modules/database"
+}
 
-# Lighting service
 
 # The service should be able to be contacted externally and interact with a DynamoDB table in your network.
 
