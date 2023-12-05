@@ -25,3 +25,30 @@ resource "aws_lb" "apps" {
   security_groups    = var.security_group_ids
   subnets            = var.public_subnets_ids
 }
+
+resource "aws_lb_listener" "apps" {
+  load_balancer_arn = aws_lb.apps.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.apps[2].arn
+  }
+}
+
+resource "aws_lb_listener_rule" "apps" {
+  count        = length(aws_lb_target_group.apps)
+  listener_arn = aws_lb_listener.apps.arn
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.apps[count.index].arn
+  }
+
+  condition {
+    path_pattern {
+      values = ["/api/${var.services[count.index]}"]
+    }
+  }
+}
