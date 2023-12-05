@@ -31,6 +31,9 @@ module "database" {
 module "load-balancing" {
   source = "./modules/load-balancing"
 
-  vpc_id       = module.networking.vpc_id
-  instances_id = module.app-server.instances_id
+  vpc_id             = module.networking.vpc_id
+  instances_ids      = module.app-server.instances_id
+  public_subnets_ids = module.networking.public_subnets_ids
+  security_group_ids = module.security.security_group_ids
+  services           = var.services
 }
