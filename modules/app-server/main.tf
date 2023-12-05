@@ -39,3 +39,16 @@ resource "aws_instance" "heating" {
     Name = "Heating app"
   }
 }
+
+resource "aws_instance" "status" {
+  instance_type          = var.instance_type
+  ami                    = data.aws_ami.ubuntu.id
+  availability_zone      = var.azs[2]
+  vpc_security_group_ids = var.security_group_ids
+  subnet_id              = var.public_subnets[2]
+  key_name               = var.access_key
+
+  tags = {
+    Name = "Status app"
+  }
+}
