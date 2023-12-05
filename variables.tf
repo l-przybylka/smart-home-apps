@@ -32,3 +32,8 @@ variable "access_key" {
   type        = string
   description = "PEM access key to connect to the instance"
 }
+
+variable "services" {
+  type        = list(string)
+  description = "List of the services used to create target groups"
+}
