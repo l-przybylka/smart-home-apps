@@ -28,9 +28,9 @@ module "database" {
   source = "./modules/database"
 }
 
+module "load-balancing" {
+  source = "./modules/load-balancing"
 
-# The service should be able to be contacted externally and interact with a DynamoDB table in your network.
-
-# To contact DynamoDB you will need to create a user with polices to access DynamoDB. Give this user CLI access and use these credentials to authenticate your services in the env files.
-
-# You will also have to set up a User for this service in IAM with a policy to be able to contact DynamoDB. We recommend creating this in the AWS console rather than creating this information using Terraform so as to not expose these keys in your state file.
+  vpc_id       = module.networking.vpc_id
+  instances_id = module.app-server.instances_id
+}
