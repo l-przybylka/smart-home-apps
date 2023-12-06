@@ -13,7 +13,7 @@ variable "security_group_ids" {
   description = "List of the security group IDs"
 }
 
-variable "public_subnets" {
+variable "public_subnets_ids" {
   type        = list(string)
   description = "List of the public subnets"
 }
@@ -36,4 +36,9 @@ variable "des_instances" {
 variable "access_key" {
   type        = string
   description = "PEM access key"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "EC2 instance type"
 }
