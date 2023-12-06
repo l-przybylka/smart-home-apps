@@ -37,3 +37,18 @@ variable "services" {
   type        = list(string)
   description = "List of the services used to create target groups"
 }
+
+variable "min_instances" {
+  type        = number
+  description = "A minimum number of instances for ASG"
+}
+
+variable "max_instances" {
+  type        = number
+  description = "A maximum number of instances for ASG"
+}
+
+variable "des_instances" {
+  type        = number
+  description = "A desired number of instances for ASG"
+}

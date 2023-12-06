@@ -6,3 +6,6 @@ azs             = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
 instance_type   = "t2.micro"
 access_key      = "my-vm-key-pair"
 services        = ["lighting", "heating", "status"]
+min_instances   = 1
+des_instances   = 2
+max_instances   = 5
