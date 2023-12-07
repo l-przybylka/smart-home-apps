@@ -42,3 +42,8 @@ variable "instance_type" {
   type        = string
   description = "EC2 instance type"
 }
+
+variable "target_group_arns" {
+  type        = list(string)
+  description = "List of the target group ARNs"
+}

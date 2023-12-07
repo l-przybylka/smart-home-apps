@@ -50,4 +50,5 @@ module "auto-scaling" {
   min_instances      = var.min_instances
   max_instances      = var.max_instances
   des_instances      = var.des_instances
+  target_group_arns  = module.load-balancing.target_group_arns
 }

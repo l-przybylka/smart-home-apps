@@ -37,5 +37,10 @@ resource "aws_autoscaling_group" "apps" {
     id      = aws_launch_template.apps[count.index].id
     version = "$Latest"
   }
+}
 
+resource "aws_autoscaling_attachment" "apps" {
+  count                  = length(var.target_group_arns)
+  autoscaling_group_name = aws_autoscaling_group.apps[count.index].id
+  lb_target_group_arn    = var.target_group_arns[count.index]
 }
