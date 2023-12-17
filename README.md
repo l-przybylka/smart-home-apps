@@ -28,7 +28,13 @@
 ### Step 2: Update the terraform.tfvars file
 <br>
 
-> You must add your IP address and Access Key generated in AWS to be able to use the project. Here you can also customise the project specifications
+> You must add your IP address and Access Key generated in AWS to be able to use the project. Here you can also customise the project specifications:
+
+```
+# Run this command in your terminal to get your IP
+curl icanhazip.com
+```
+
 ```diff
 
 # Sets the name of the VPC in AWS
