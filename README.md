@@ -11,6 +11,7 @@
 
 ## Install
 <br>
+
 [Follow the Terraform installation steps for your system](https://developer.hashicorp.com/terraform/install)
 
 ## Usage
@@ -19,8 +20,8 @@
 <br>
 
 ```
-~$ cd terraform
-~/terraform$ terraform init
+~$ cd smart-home-apps
+~/smart-home-apps$ terraform init
 ```
 
 ### Step 2: Update the terraform.tfvars file
@@ -56,7 +57,7 @@ max_instances   = 5
 <br>
 
 ```
-~/terraform$ terraform apply
+~/smart-home-apps$ terraform apply
 ```
 
 ### Step 4: SSH into your servers and install your microservers
