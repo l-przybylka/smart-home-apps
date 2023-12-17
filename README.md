@@ -20,7 +20,7 @@
 
 <br>
 
-```
+```diff
 ~$ cd smart-home-apps
 ~/smart-home-apps$ terraform init
 ```
