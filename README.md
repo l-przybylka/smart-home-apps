@@ -16,7 +16,9 @@
 
 ## Usage
 <br>
+
 ### Step 1: After logging in to AWS in the CLI, initialise Terraform in its directory
+
 <br>
 
 ```
