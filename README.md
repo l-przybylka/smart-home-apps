@@ -6,36 +6,25 @@
 > What your application does,
 > Why you used the technologies you used,
 > Some of the challenges you faced and features you hope to implement in the future.
-> What your application does,
-> Why you used the technologies you used,
-> Some of the challenges you faced and features you hope to implement in the future.
 
 ## Install
 
-[Follow Terraform installation steps for your system](https://developer.hashicorp.com/terraform/install)
+[Follow the Terraform installation steps for your system](https://developer.hashicorp.com/terraform/install)
 
 ## Usage
 
-### Step 1: After logging in to AWS in the CLI, initialise terraform in the terraform directory
+### Step 1: After logging in to AWS in the CLI, initialise Terraform in it's directory
 
 ```
 ~$ cd terraform
 ~/terraform$ terraform init
 ```
 
-### Step 2: Update the terraform.tfvars
+### Step 2: Update the terraform.tfvars file
 
 > You must add your IP address and Access Key generated in AWS to be able to use the project. Here you can also customise the project specifications
-
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
 
-```diff
 # Sets the name of the VPC in AWS
 vpc_name        = "home-management-project"
 # Sets the CIDR block of the VPC
@@ -86,9 +75,22 @@ ec2-server-ssh$ pm2 start <your application>
 ec2-server-ssh$ pm2 startup
 ec2-server-ssh$ pm2 save
 ```
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 
 ## Modules
 > The project is divided into the following modules:
+### Networking
+### Security
+### App servers
+### Database
+### Load balancing
+### Auto scaling
 ## Author
 
 👤 **Lukasz Przybylka**
