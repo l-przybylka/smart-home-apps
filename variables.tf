@@ -52,3 +52,7 @@ variable "des_instances" {
   type        = number
   description = "A desired number of instances for ASG"
 }
+
+variable "ip_for_ssh_sg" {
+  type = string
+}

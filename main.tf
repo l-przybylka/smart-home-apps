@@ -9,9 +9,9 @@ module "networking" {
 }
 
 module "security" {
-  source = "./modules/security"
-
-  vpc_id = module.networking.vpc_id
+  source        = "./modules/security"
+  ip_for_ssh_sg = var.ip_for_ssh_sg
+  vpc_id        = module.networking.vpc_id
 }
 
 module "app-server" {
