@@ -10,7 +10,6 @@
 
 
 ## Install
-<br>
 
 [Follow the Terraform installation steps for your system](https://developer.hashicorp.com/terraform/install)
 
