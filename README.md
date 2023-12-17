@@ -10,12 +10,13 @@
 
 
 ## Install
-
+<br>
 [Follow the Terraform installation steps for your system](https://developer.hashicorp.com/terraform/install)
 
 ## Usage
-
+<br>
 ### Step 1: After logging in to AWS in the CLI, initialise Terraform in its directory
+<br>
 
 ```
 ~$ cd terraform
@@ -23,6 +24,7 @@
 ```
 
 ### Step 2: Update the terraform.tfvars file
+<br>
 
 > You must add your IP address and Access Key generated in AWS to be able to use the project. Here you can also customise the project specifications
 ```diff
@@ -50,16 +52,17 @@ max_instances   = 5
 
 ```
 
-Step 3: Run terraform apply to create the infrastructure on AWS
+### Step 3: Run terraform apply to create the infrastructure on AWS
+<br>
 
 ```
 ~/terraform$ terraform apply
 ```
 
-Step 4: SSH into your servers and install your microservers
+### Step 4: SSH into your servers and install your microservers
 <br>
-<br>
-a) Set up node, npm and pm2 on each of the servers using the command below
+
+a) Set up node, npm and pm2 on each of the servers using the command below.
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash &&
 . ~/.nvm/nvm.sh &&
@@ -67,10 +70,10 @@ nvm install --lts &&
 npm install pm2@latest -g
 ```
 <br>
-b) Clone and install the services
+b) Clone and install the services.
 <br>
 <br>
-c) Use the following commands in your ec2 to make sure the autoscaling servers will run the application on start-up
+c) Use the following commands in your ec2 to make sure the autoscaling servers will run the application on start-up.
 
 ```
 ec2-server-ssh$ pm2 start <your application>
@@ -79,6 +82,8 @@ ec2-server-ssh$ pm2 save
 ```
 
 ## Modules
+<br>
+
 > The project is divided into the following modules:
 ### Networking
 > The Networking module provisions VPC and creates public and private subnets. As well as set up a route table and internet gateway for the public subnets.
