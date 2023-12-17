@@ -12,7 +12,6 @@ terraform init
 
 ## Usage
 
-```sh
 Step 1: After logging in to AWS in the CLI, initialise terraform in the terraform directory
 
 ```
@@ -40,7 +39,6 @@ ec2-server-ssh$ pm2 start <your application>
 ec2-server-ssh$ pm2 startup
 ec2-server-ssh$ pm2 save
 
-```
 
 ```
 
