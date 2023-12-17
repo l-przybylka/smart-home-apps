@@ -20,7 +20,7 @@
 
 <br>
 
-```diff
+```
 ~$ cd smart-home-apps
 ~/smart-home-apps$ terraform init
 ```
@@ -30,7 +30,7 @@
 
 > You must add your IP address and Access Key generated in AWS to be able to use the project. Here you can also customise the project specifications:
 
-```
+```diff
 # Run this command in your terminal to get your IP
 curl icanhazip.com
 ```
