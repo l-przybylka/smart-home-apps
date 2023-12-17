@@ -77,14 +77,6 @@ ec2-server-ssh$ pm2 start <your application>
 ec2-server-ssh$ pm2 startup
 ec2-server-ssh$ pm2 save
 ```
-<!--
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-``` -->
 
 ## Modules
 > The project is divided into the following modules:
